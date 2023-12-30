@@ -23,7 +23,7 @@ def set_alarm(hour, minute, am_pm):
     if time_diff > 0:
         print(f"Alarm set for {hour:02}:{minute:02} {am_pm.upper()}")
         time.sleep(time_diff)
-        print("Wake up!")
+        print("Alarm ringing...")
         play_alarm_sound(duration=10)  # Set the duration to 10 seconds
     else:
         print("Invalid alarm time. Please set a future time.")
@@ -45,12 +45,12 @@ def play_alarm_sound(duration=1):
 if __name__ == "__main__":
     try:
         # Get user input for the alarm time
-        alarm_hour = int(input("Enter the hour (1-12): "))
-        alarm_minute = int(input("Enter the minute (0-59): "))
+        alarm_hour = int(input("Enter the hour for Alarm between 1 to 12: "))
+        alarm_minute = int(input("Enter the minute for Alarm between 0 to 59: "))
         am_pm = input("Enter AM or PM: ")
 
         # Set the alarm
         set_alarm(alarm_hour, alarm_minute, am_pm)
 
     except ValueError:
-        print("Invalid input. Please enter valid numbers for hour and minute.")
+        print("1Please enter valid numbers for hour and minute.")
